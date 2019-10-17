@@ -1,0 +1,32 @@
+<?php 
+  header('Content-Type: application/json', true);
+  $data = array();
+?>
+
+<BOUCLE_rubriques(ARTICLES){tout}{par date}{2, 3}{inverse}>
+
+        <?php 
+          array_push(
+            $data,
+            array(
+              "id" => "[(#ID_ARTICLE)]",
+              "rubrique_id" => "[(#ID_RUBRIQUE)]",
+              "title" => "[(#TITRE|supprimer_numero|textebrut)]",
+              "subtitle" => "[(#SOUSTITRE)]",
+              "description" => "[(#INTRODUCTION|textebrut)]",
+              "header" => "[(#CHAPO)]",
+              "url" => "[(#URL_ARTICLE)]",
+              "media" => "[(#LOGO_ARTICLE_RUBRIQUE||extraire_attribut{src})]",
+              "created" => "[(#DATE_REDAC)]",
+              "setOnline" => "[(#DATE)]",
+              "updated" => "[(#DATE_MODIF)]"
+            )
+          );
+
+        ?>
+      
+</BOUCLE_rubriques>
+
+<?php 
+
+echo json_encode(array("data" => $data)); ?>

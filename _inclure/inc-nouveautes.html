@@ -1,0 +1,23 @@
+<BOUCLE_rubriques(ARTICLES){tout}{par date}{age<40}{inverse}>
+
+        <?php 
+          array_push(
+            $articlesNews,
+            array(
+              "id" => "[(#ID_ARTICLE)]",
+              "rubrique_id" => "[(#ID_RUBRIQUE)]",
+              "title" => "[(#TITRE|supprimer_numero|textebrut)]",
+              "subtitle" => "[(#SOUSTITRE)]",
+              "description" => "[(#INTRODUCTION|textebrut)]",
+              "header" => "[(#CHAPO)]",
+              "url" => "[(#URL_ARTICLE)]",
+              "media" => "[(#LOGO_ARTICLE||reduire_image{80})]",
+              "created" => "[(#DATE_REDAC)]",
+              "setOnline" => "[(#DATE)]",
+              "updated" => "[(#DATE_MODIF)]"
+            )
+          );
+
+        ?>
+      
+</BOUCLE_rubriques>

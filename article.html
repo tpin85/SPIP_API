@@ -1,0 +1,13 @@
+<!-- #CACHE{0} -->
+<?php 
+
+  header('Content-Type: application/json', true);
+?>
+<BOUCLE_article(ARTICLES){id_article}{doublons}>
+  $data = array(
+    "title" => "[(#NOM_SITE_SPIP)]",
+  );
+</BOUCLE_article>
+<?php  
+  
+  echo json_encode($data); ?>

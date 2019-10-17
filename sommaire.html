@@ -1,0 +1,18 @@
+<?php 
+  header('Content-Type: application/json', true);
+  $articlesUnes = array();
+  $articlesNews = array();
+?>
+
+<INCLURE{fond=_inclure/inc-articles-une}>
+
+<INCLURE{fond=_inclure/inc-nouveautes}>
+
+<?php 
+  $data = array(
+    "title" => "[(#NOM_SITE_SPIP)]",
+    "articlesUne" => $articlesUnes,
+    "articlesNews" => $articlesNews
+  );
+
+echo json_encode($data); ?>

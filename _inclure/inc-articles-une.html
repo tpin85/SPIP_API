@@ -1,0 +1,22 @@
+<BOUCLE_affiche(ARTICLES){tout}{titre_mot = une}>
+
+        <?php 
+          array_push(
+            $articlesUnes,
+            array(
+              "id" => "[(#ID_ARTICLE)]",
+              "rubrique_id" => "[(#ID_RUBRIQUE)]",
+              "title" => utf8_encode("[(#TITRE|supprimer_numero)]"),
+              "subtitle" => "[(#SOUSTITRE)]",
+              "description" => "[(#INTRODUCTION|textebrut)]",
+              "header" => "[(#CHAPO)]",
+              "url" => "[(#URL_ARTICLE)]",
+              "created" => "[(#DATE_REDAC)]",
+              "setOnline" => "[(#DATE)]",
+              "updated" => "[(#DATE_MODIF)]",
+            )
+          );
+
+        ?>
+      
+</BOUCLE_affiche>
